@@ -21,6 +21,7 @@ export const Home = () => {
 
         });
         const json = await res.json();
+        console.log(json);
         startTransition(() => {
           setData(json);
         });
