@@ -1,0 +1,22 @@
+.hovered:hover{
+   background-color: #f9e0c7;
+  border: 2px solid orange;
+  transform: scale(1.02); 
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); 
+}
+.hovered{
+   transition: all 0.3s ease-in-out;
+}
+
+
+/* Default (light mode) */
+.container, h1, h3, h4, p {
+  color: black;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .container, h1, h3, h4, p {
+    color: white;
+  }
+}

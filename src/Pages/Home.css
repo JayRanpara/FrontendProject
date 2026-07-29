@@ -1,0 +1,165 @@
+.content{
+   text-align: center;
+   padding-top: 100px;
+}
+.navbar{
+   background-color: #fff;
+}
+body{
+   padding-top: 100px;
+}
+/* .banner img{
+   border-radius: 15px; */
+/* } */
+.banner img {
+  border-radius: 15px;
+  width: 100%;   /* Responsive image */
+  height: auto;
+  object-fit: cover;
+}
+.banner {
+  position: relative;
+  height: 500px;
+  width: 90%; /* or any fixed value like 1000px */
+  margin: 0 auto; /* centers the banner horizontally */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.banner .content {
+  position: absolute;
+  color: white;
+}
+/* .back{
+   height: 500px;
+   width: auto;
+   width: 1500px;
+   background-color: #f1e5d1;
+   position: relative;
+   margin-top: 50px;
+   z-index: -2;
+} */
+ .back {
+  position: absolute;
+  top: 400px;
+  left: 0;
+  height: 400px;
+  width: 100%;
+  background-color: #f1e5d1;
+  border-radius: 15px;
+  z-index: -2; /* keeps it behind the content & image */
+}
+.back2-box{
+   padding: 20px 20px 20px 20px;
+   text-align: left;
+   border-radius: 25px;
+   margin-top: 80px;
+   box-shadow: 0px 5px 5px 2px rgba(0, 0, 0, 0.5);
+}
+.input-detail{
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+   align-items: center;
+}
+
+.input-detail .form-control  {
+   width: 350px;
+   margin-right: 20px;
+   height: 50px;
+   margin-top: 20px;
+}
+.input-detail  .btn{
+   height: 50px;
+   width: 150px;
+   color: white;
+   font-weight: 600;
+   background-color: #f89231;
+   margin-top: 20px;
+}
+.fill-data{
+   background-color: #ffddbc;
+   /* width: 1500px; */
+   position: absolute;
+   text-align: center;
+   left: 0;
+
+   height: 250px;
+   padding: 50px 20px;
+   margin-top: 50px;
+}
+main{
+   margin-top: 400px;
+}
+.card-body{
+   margin-top: 20px;
+   padding: 20px;
+   border-radius: 12px;
+   transition: all 0.3s ease-in-out;
+}
+.card-title{
+   color: #f89231;
+}
+.card-text{
+   color: grey;
+}
+.card-body:hover{
+   background-color: #f9e0c7;
+  border: 2px solid orange;
+  transform: scale(1.02); 
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); 
+}
+.site-footer a{
+   text-decoration: none;
+   margin-left: 20px;
+   font-size: 18px;
+   color: black;
+   opacity: 0.4;
+} 
+.site-footer a:hover{
+   opacity: 1;
+}
+.footer-icons{
+   margin-top: 30px;
+}
+.site-footer{
+   margin-top: 50px;
+   padding-top : 100px ;
+   padding-bottom: 30px;
+   text-align: center;
+   border-top: 2px solid rgb(209, 206, 206);
+   border-bottom: 2px solid rgb(209, 206, 206);
+} 
+
+.footer-2 a{
+   text-decoration: none;
+   color: #f89231;
+}
+.footer-2{
+   text-align: center;
+   color: black;
+   opacity: 0.7;
+   font-size: 14px;
+   border-bottom: 2px solid rgb(209, 206, 206);
+   padding-top: 10px;
+   padding-bottom: 10px;
+}
+@media (max-width: 768px) {
+  .fill-data h1 {
+    font-size: 1.5rem;
+  }
+  .input-detail {
+    flex-direction: column;
+  }
+  .card-body {
+    margin: 10px auto;
+  }
+}
+
+nav ul li i{
+   color: orange;
+}
+.fill-data{
+   position: static;
+}

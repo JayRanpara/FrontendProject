@@ -1,0 +1,67 @@
+/* Light theme */
+body.light {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Dark theme */
+body.dark {
+  background-color: #121212;
+  color: #ffffff;
+}
+body.dark p{
+  color: #ffffff;
+}
+
+/* Navbar light */
+body.light .navbar {
+  background-color: #f8f9fa !important;
+}
+
+/* Navbar dark */
+body.dark .navbar {
+  background-color: #1f1f1f !important;
+  
+}
+/* * Light Theme Navbar * */
+body.light .navbar {
+  background-color: #f8f9fa !important; /* Bootstrap light gray */
+  color: #000 !important;
+}
+
+/* Dark Theme Navbar */
+body.dark .navbar {
+  background-color: #1c1c1c !important; /* Dark navbar */
+  color: #fff !important;
+}
+
+/* Fix nav links */
+body.dark .nav-link {
+  color: #fff !important;
+}
+
+body.light .nav-link {
+  color: #000 !important;
+}
+body.dark .navbar-brand{
+   color: #fff;
+}
+
+
+body.dark .footer-icons a{
+   color: white;
+}
+body.dark .footer-links a{
+   color: white;
+}
+body.dark .footer-2{
+   color: white;
+}
+body.dark .back{
+   background-color: black;
+}
+
+body.dark .fill-data{
+   background-color: #ac9279;
+}
+
