@@ -20,11 +20,9 @@ export const Chapters = () => {
         const res = await fetch(`https://bhagavad-gita3.p.rapidapi.com/v2/chapters/${id}/`, {
           method: 'GET',
           headers: {
-  'x-rapidapi-key': import.meta.env.VITE_RAPIDAPI_KEY,
-  'x-rapidapi-host': import.meta.env.VITE_RAPIDAPI_HOST
-}
-
-
+            'x-rapidapi-key': import.meta.env.VITE_RAPIDAPI_KEY,
+            'x-rapidapi-host': import.meta.env.VITE_RAPIDAPI_HOST
+          }
         });
         const json = await res.json();
         startTransition(() => setData(json));
@@ -43,16 +41,23 @@ export const Chapters = () => {
         const res = await fetch(`https://bhagavad-gita3.p.rapidapi.com/v2/chapters/${id}/verses/`, {
           method: "GET",
           headers: {
-  'x-rapidapi-key': import.meta.env.VITE_RAPIDAPI_KEY,
-  'x-rapidapi-host': import.meta.env.VITE_RAPIDAPI_HOST
-}
-
-
+            'x-rapidapi-key': import.meta.env.VITE_RAPIDAPI_KEY,
+            'x-rapidapi-host': import.meta.env.VITE_RAPIDAPI_HOST
+          }
         });
         const json = await res.json();
-        setVerses(json); 
+
+        // ✅ Ensure we store an array
+        if (Array.isArray(json)) {
+          setVerses(json);
+        } else if (json.verses) {
+          setVerses(json.verses);
+        } else {
+          setVerses([]);
+        }
       } catch (err) {
         console.error("Failed to fetch verses:", err);
+        setVerses([]);
       } finally {
         setLoadingVerses(false);
       }
@@ -63,14 +68,17 @@ export const Chapters = () => {
 
   if (isPending || loadingVerses) return <Loader />;
 
-  const filteredVerses = verses
-    .filter((verse) =>
-      searchTerm === "" || verse.verse_number.toString() === searchTerm
-    )
-    .sort((a, b) => sortAsc 
-      ? a.verse_number - b.verse_number 
-      : b.verse_number - a.verse_number
-    );
+  const filteredVerses = Array.isArray(verses)
+    ? verses
+        .filter((verse) =>
+          searchTerm === "" || verse.verse_number.toString() === searchTerm
+        )
+        .sort((a, b) =>
+          sortAsc
+            ? a.verse_number - b.verse_number
+            : b.verse_number - a.verse_number
+        )
+    : [];
 
   return (
     <>
@@ -138,7 +146,7 @@ export const Chapters = () => {
               VERSE {verse.verse_number}
             </h4>
             <p style={{width:"700px"}}>
-              {verse.translations.find(t => t.language === "english")?.description || "No translation available"}
+              {verse.translations?.find(t => t.language === "english")?.description || "No translation available"}
             </p>
           </div>
         </section>
